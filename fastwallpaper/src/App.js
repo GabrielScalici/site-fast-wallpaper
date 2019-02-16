@@ -24,6 +24,21 @@ class App extends Component {
                     </Navbar.Brand>
                 </Navbar>
 
+                <h2 className="ui icon header">
+                    {/* <i className="desktop icon"></i> */}
+                    <img
+                            alt=""
+                            src={logo}
+                            width="140"
+                            height="140"
+                            className="d-inline-block align-top"
+                        />
+                    <div className="content">
+                        Fast Wallpaper
+                        <div className="sub header">Cansado de passar horas procurando o melhor papel de parede?.</div>
+                    </div>
+                </h2>
+
                 <div className="ui huge fluid action input">
                     <input type="text" placeholder="Digite em inglês o estilo de papel de parede que deseja..." />
                     <div className="ui button">Buscar</div>
