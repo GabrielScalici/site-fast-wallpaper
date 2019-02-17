@@ -1,13 +1,41 @@
 import React, { Component } from 'react';
 import { Navbar } from 'react-bootstrap';
 
-//COMPONENTES
+//STYLES
 import './App.css';
+
+//COMPONENTS
+import ImageList from './components/ImageList';
 
 //IMAGENS
 import logo from './img/logo.png';
 
 class App extends Component {
+    
+    constructor(props){
+        super(props);
+
+        this.state = {
+            photos: [],
+            name:'star',
+        }
+
+        this.onSearch();
+    }
+
+    //FUNCAO PARA BUSCAR OS PAPEIS DE PAREDE
+    onSearch = async () => {
+        const response = await teste.get('/search/photos', {
+            params: {
+                query: {this.state.name}
+            }
+        });
+
+        this.setState({ photos: response.data.results })
+        console.log(response.data.results);
+    }
+
+    
     render() {
         return (
             <div className="App">
@@ -43,6 +71,10 @@ class App extends Component {
                     <input type="text" placeholder="Digite em inglês o estilo de papel de parede que deseja..." />
                     <div className="ui button">Buscar</div>
                 </div>
+
+                <ImageList
+                    images={this.state.photos}
+                />
 
             </div>
         );
