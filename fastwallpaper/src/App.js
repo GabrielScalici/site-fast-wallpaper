@@ -12,15 +12,16 @@ import unsplash from './api/unsplash';
 
 //IMAGENS
 import logo from './img/logo.png';
+import perfil from './img/GabrielScalici.png';
 
 class App extends Component {
-    
-    constructor(props){
+
+    constructor(props) {
         super(props);
 
         this.state = {
             photos: [],
-            name:'star',
+            name: 'star',
         }
 
         this.onSearch();
@@ -38,7 +39,7 @@ class App extends Component {
         console.log(response.data.results);
     }
 
-    
+
     render() {
         return (
             <div className="App">
@@ -58,12 +59,12 @@ class App extends Component {
                 <h2 className="ui icon header">
                     {/* <i className="desktop icon"></i> */}
                     <img
-                            alt=""
-                            src={logo}
-                            width="140"
-                            height="140"
-                            className="d-inline-block align-top"
-                        />
+                        alt=""
+                        src={logo}
+                        width="140"
+                        height="140"
+                        className="d-inline-block align-top"
+                    />
                     <div className="content">
                         Fast Wallpaper
                         <div className="sub header">Cansado de passar horas procurando o melhor papel de parede?.</div>
@@ -79,7 +80,29 @@ class App extends Component {
                     images={this.state.photos}
                 />
 
+                <div className="back-end">
+                    <div className="ui grid">
+                        <div className="four wide column"> </div>
+                        <div className="ui link items eight wide column perfil-item">
+                            <div className="item">
+                                <div className="ui tiny image">
+                                    <img className="photo-perfil" src={perfil} />
+                                </div>
+                                <div className="content">
+                                    <div className="header">Gabriel Scalici</div>
+                                    <div className="description">
+                                        <p> Programador React/React-Native/Redux</p>
+                                        <p> Ciência da Computação - USP São Carlos</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="four wide column"> </div>
+                    </div>
+                </div>
             </div>
+
         );
     }
 }
