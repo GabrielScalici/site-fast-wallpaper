@@ -21,7 +21,7 @@ class App extends Component {
 
         this.state = {
             photos: [],
-            name: 'star',
+            name: 'cats',
         }
 
         this.onSearch();
@@ -31,7 +31,7 @@ class App extends Component {
     onSearch = async () => {
         const response = await unsplash.get('/search/photos', {
             params: {
-                query: 'star'
+                query: 'beagle'
             }
         });
 
