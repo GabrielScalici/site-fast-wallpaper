@@ -7,6 +7,9 @@ import './App.css';
 //COMPONENTS
 import ImageList from './components/ImageList';
 
+//API
+import unsplash from './api/unsplash';
+
 //IMAGENS
 import logo from './img/logo.png';
 
@@ -25,9 +28,9 @@ class App extends Component {
 
     //FUNCAO PARA BUSCAR OS PAPEIS DE PAREDE
     onSearch = async () => {
-        const response = await teste.get('/search/photos', {
+        const response = await unsplash.get('/search/photos', {
             params: {
-                query: {this.state.name}
+                query: 'star'
             }
         });
 
