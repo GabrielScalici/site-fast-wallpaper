@@ -21,17 +21,19 @@ class App extends Component {
 
         this.state = {
             photos: [],
-            name: 'cats',
+            name: 'glasses',
         }
 
         this.onSearch();
+
+        this.onSearch = this.onSearch.bind(this);
     }
 
     //FUNCAO PARA BUSCAR OS PAPEIS DE PAREDE
-    onSearch = async () => {
+    onSearch = async (text) => {
         const response = await unsplash.get('/search/photos', {
             params: {
-                query: 'beagle'
+                query: this.state.name
             }
         });
 
@@ -67,7 +69,7 @@ class App extends Component {
                     />
                     <div className="content">
                         Fast Wallpaper
-                        <div className="sub header">Cansado de passar horas procurando o melhor papel de parede?.</div>
+                        <div className="sub header">Cansado de passar horas procurando o melhor papel de parede?</div>
                     </div>
                 </h2>
 
