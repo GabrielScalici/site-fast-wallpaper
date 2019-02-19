@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Navbar } from 'react-bootstrap';
+import Gallery from 'react-grid-gallery';
 
 //STYLES
 import './App.css';
@@ -78,9 +79,10 @@ class App extends Component {
                     <div className="ui button">Buscar</div>
                 </div>
 
-                <ImageList
+                {/* <ImageList
                     images={this.state.photos}
-                />
+                /> */}
+                <Gallery images={this.state.photos}/>
 
                 <div className="back-end">
                     <div className="ui grid">
