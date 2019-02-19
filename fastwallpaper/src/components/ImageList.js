@@ -1,9 +1,12 @@
 import React from 'react';
 
+//Styles
+import './ImageList.css';
+
 const ImageList = props => {
 
     const images = props.images.map(image => {
-        return <img src={image.urls.small} />
+        return <img className="image-list"src={image.urls.small} />
     });
 
     return <div> {images} </div>
